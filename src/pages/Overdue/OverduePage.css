@@ -1,0 +1,245 @@
+/* ─── Overdue Page ─── */
+.overdue-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fade-in 0.4s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Alert Banner ─── */
+.overdue-alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 95, 87, 0.08);
+  border: 1px solid rgba(255, 95, 87, 0.2);
+  border-radius: 14px;
+}
+
+.overdue-alert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 95, 87, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5f57;
+  flex-shrink: 0;
+}
+
+.overdue-alert-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.overdue-alert-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff7070;
+}
+
+.overdue-alert-sub {
+  font-size: 13px;
+  color: #ff7070;
+  opacity: 0.7;
+}
+
+/* ─── Header ─── */
+.overdue-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.overdue-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.overdue-title {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overdue-count-badge {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(255, 95, 87, 0.15);
+  color: #ff7070;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 95, 87, 0.2);
+}
+
+.overdue-subtitle {
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+/* ─── Overdue Task Card ─── */
+.overdue-task-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 95, 87, 0.18);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.overdue-task-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #ff5f57;
+}
+
+.overdue-task-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 95, 87, 0.35);
+  box-shadow: 0 6px 20px rgba(255, 95, 87, 0.1);
+}
+
+.overdue-task-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overdue-task-title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  line-height: 1.4;
+}
+
+.overdue-task-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.overdue-meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.overdue-meta-chip.red {
+  color: #ff7070;
+  font-weight: 500;
+}
+
+.overdue-project-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Overdue days badge */
+.days-overdue-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(255, 95, 87, 0.15);
+  color: #ff5f57;
+  border: 1px solid rgba(255, 95, 87, 0.2);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.priority-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+}
+
+.priority-badge.high { background: rgba(255, 95, 87, 0.12); color: #ff7070; }
+.priority-badge.medium { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+.priority-badge.low { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+
+.overdue-task-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.task-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.task-action-btn:hover {
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Empty State ─── */
+.overdue-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+  gap: 12px;
+  background: rgba(52, 211, 153, 0.04);
+  border: 1px dashed rgba(52, 211, 153, 0.2);
+  border-radius: 16px;
+}
+
+.overdue-empty-icon {
+  opacity: 0.5;
+  color: var(--green);
+}
+
+.overdue-empty-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.overdue-empty-sub {
+  font-size: 13px;
+  color: var(--text-3);
+}

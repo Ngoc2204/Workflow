@@ -1,0 +1,277 @@
+/* ─── Completed Page ─── */
+.completed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fade-in 0.4s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Header ─── */
+.completed-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.completed-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.completed-title {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.completed-count-badge {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--green);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+}
+
+.completed-subtitle {
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+/* ─── Stats Row ─── */
+.completed-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.completed-stat-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+
+.completed-stat-card:hover {
+  border-color: var(--border-hover);
+}
+
+.completed-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.completed-stat-icon.green { background: rgba(52, 211, 153, 0.1); color: var(--green); }
+.completed-stat-icon.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.completed-stat-icon.yellow { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.completed-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-1);
+  font-family: 'Lora', serif;
+  line-height: 1;
+}
+
+.completed-stat-label {
+  font-size: 12px;
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+/* ─── Section Title ─── */
+.completed-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.completed-section-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── Completed Task Card ─── */
+.completed-task-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.completed-task-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--green);
+}
+
+.completed-task-card:hover {
+  border-color: rgba(52, 211, 153, 0.2);
+  background: rgba(52, 211, 153, 0.02);
+}
+
+.completed-check-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1.5px solid rgba(52, 211, 153, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.completed-task-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.completed-task-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: line-through;
+  text-decoration-color: rgba(52, 211, 153, 0.4);
+}
+
+.completed-task-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.completed-meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.completed-meta-chip.green {
+  color: rgba(52, 211, 153, 0.8);
+}
+
+.completed-project-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.completed-task-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.task-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.task-action-btn:hover {
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Empty State ─── */
+.completed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+  gap: 12px;
+  background: var(--surface-2);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+}
+
+.completed-empty-icon { opacity: 0.3; }
+
+.completed-empty-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.completed-empty-sub {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.secondary-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  color: var(--text-1);
+  font-size: 13.5px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+}
